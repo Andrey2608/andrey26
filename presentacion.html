@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="diseño.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <h1>PRESENTACIÓN</h1>
+        <div id=""caja1></div>
+    </div>
+
+    <div class="card">
+        
+        <div class= "content">
+            <span></span>
+            <div class= "img">
+                <img src="mancera.jpeg" alt="">
+            </div>
+            <h3> Jose David Mancera</h3>
+            <h4>Estudiante</h4>
+            <h6>Numero Telefono: 321 854 6801</h6>
+            <h6>Correo Institucional: jmancerap@inemkennedy.edu.co</h6>
+            <h6>Instagram: jose_mancera04 </h6>
+            <h6>Facebook: Jose Mancera</h6>
+            <h6>Whatsapp: 321 854 6801 </h6>
+        </div>
+        
+         
+    </div>
+    <div class="card">
+        <div class= "content">
+            <span></span>
+            <div class= "img">
+                <img src="mio.JPG" alt="">
+            </div>
+            <h3>Andrey Cardona</h3>
+            <h4>Estudiante</h4>
+            <h6>Numero Telefono: 3106789113</h6>
+            <h6>Correo Institucional: Mcardonat@inemkennedy.edu.co</h6>
+            <h6>Instagram: Andrey_nzo </h6>
+            <h6>Facebook: Andrey Cardona</h6>
+            <h6>Whatsapp: 3106789113</h6>
+        </div>
+        
+    </div>
+    <body>
+        <h1>CALCULADORA</h1>
+        <form id="calculadora" onsubmit="return false;">
+            <label for="numero1">Número 1:</label>
+            <input type="number" id="numero1" name="numero1">
+            <label for="numero2">Número 2:</label>
+            <input type="number" id="numero2" name="numero2">
+            <label for="operacion">Operación:</label>
+            <select id="operacion" name="operacion">
+                <option value="suma">Suma</option>
+                <option value="resta">Resta</option>
+                <option value="multiplicacion">Multiplicación</option>
+                <option value="division">División</option>
+            </select>
+            <button type="submit" onclick="calcular()">Calcular</button>
+        </form>
+        <div id="resultado" class="resultado"></div>
+        <script>
+            function calcular() {
+                var numero1 = document.getElementById("numero1").value;
+                var numero2 = document.getElementById("numero2").value;
+                var operacion = document.getElementById("operacion").value;
+                var resultado = 0;
+                switch (operacion) {
+                    case "suma":
+                        resultado = Number(numero1) + Number(numero2);
+                        break;
+                    case "resta":
+                        resultado = numero1 - numero2;
+                        break;
+                    case "multiplicacion":
+                        resultado = numero1 * numero2;
+                        break;
+                    case "division":
+                        resultado = numero1 / numero2;
+                        break;
+                }
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        </script>
+    </body>
